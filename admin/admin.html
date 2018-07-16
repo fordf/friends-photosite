@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload to TazeHenderson.com</title>
+    <script src="./aws-sdk-s3.js"></script>
+    <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.189.0.min.js"></script> -->
+  </head>
+  <body>
+    <span id="success-modal" style="display: none; position: fixed; right: 30px; font-size: 2em">
+       &#128077
+    </span>
+    <h1>TazeHenderson.com Admin</h1>
+    <hr>
+    <section id="photo-section">
+      <h2>Upload new Photos</h2>
+      <form id="photo-form" enctype="multipart/form-data">
+        <input name="filesToUpload[]" id="files-input" type="file" multiple="" />
+        <ul id="photo-input-list"></ul>
+        <div id="photo-form-buttons" style="display: none">
+          <button>Upload photo(s)</button>
+          <button type="button" onclick="th.resetUploadForm()">Cancel</button>
+        </div>
+      </form>
+    </section>
+    <hr>
+    <section id="quote-section">
+      <h2>Quotes</h2>
+      <ul id="quote-list">
+        <img src="https://media.giphy.com/media/wgXkLPkEmPKsU/giphy.gif" height="20" width="20" alt="One moment...">
+      </ul>
+      <button id="new-quote-button">Add a new quote</button>
+      <form id="quote-form">
+        <ul id="quote-input-list"></ul>
+        <button id="submit-quotes" style="display: none">Upload quote(s)</button>
+      </form>
+    </section>
+    <hr>
+    <section id="bucket-section">
+      <h2>Photos</h2>
+      <ul id="bucket-contents">
+        <img src="https://media.giphy.com/media/wgXkLPkEmPKsU/giphy.gif" height="20" width="20" alt="One moment...">
+      </ul>
+      <button id="querybucket">Query bucket</button>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>
